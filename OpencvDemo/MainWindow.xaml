@@ -1,0 +1,41 @@
+﻿<Window x:Class="OpencvDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OpencvDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Border CornerRadius="12" Margin="10" Background="LightGray">
+            <Image Source="{Binding MainImage}"></Image>
+        </Border>
+
+        <StackPanel HorizontalAlignment="Center" Margin="10" VerticalAlignment="Center" Grid.Column="1">
+            <Button Margin="10" Click="OpenImage" Width="40" Height="24">打开</Button>
+            <Button Margin="10" Click="SaveImage" Width="40" Height="24">保存</Button>
+            <Button Margin="10" Click="ShowImage" Width="40" Height="24">显示</Button>
+            <Button Margin="10" Click="GetImageInfo" Width="40" Height="24">属性</Button>
+            <Button Margin="10" Click="CreateImage" Width="40" Height="24">创建</Button>
+            <Button Margin="10" Click="CropImage" Width="40" Height="24">裁剪</Button>
+            <Button Margin="10" Click="ConcatImage" Width="40" Height="24">拼接</Button>
+            <Button Margin="10" Click="SplitImage" Width="40" Height="24">拆分</Button>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <Label Margin="10">宽度</Label>
+            <TextBlock Margin="10" Text="{Binding Width}"></TextBlock>
+
+            <Label Margin="10">高度</Label>
+            <TextBlock Margin="10" Text="{Binding Height}"></TextBlock>
+
+            <Label Margin="10">通道</Label>
+            <TextBlock Margin="10" Text="{Binding Channel}"></TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>
